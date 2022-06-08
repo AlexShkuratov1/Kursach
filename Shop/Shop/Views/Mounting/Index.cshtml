@@ -1,0 +1,19 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Editable Content</title>
+</head>
+<dody><div id="edit" contenteditable="true"></div>
+    <script>
+        var edit = document.getElementById('edit');
+        edit.innerHTML = localStorage.getItem('edit');
+        edit.addEventListener('blur', function () {
+            localStorage.setItem('edit', this.innerHTML);
+        })
+    </script>
+</dody>
+</html>
+
+
+

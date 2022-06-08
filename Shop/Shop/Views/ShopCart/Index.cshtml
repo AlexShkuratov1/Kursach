@@ -1,0 +1,14 @@
+﻿@using Shop.Data.Models
+@model ShopCartViewModel
+<div class="container mt-5">
+    @foreach (var el in Model.shopCart.listShopItems)
+    {
+        <div class="alert alert-warning mt-3">
+            <b>Камера:</b>@el.camera.name<br />
+            <b>Цена:</b>@el.camera.price.ToString("c")
+            <a class="btn btn-warning" asp-controller="ShopCart" asp-action="removeFromCart" asp-route-id="@Model.shopCart.ShopCartId">Удалить</a>
+        </div>
+    }
+    <hr />
+    <a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Checkout">Оплатить</a>
+</div>

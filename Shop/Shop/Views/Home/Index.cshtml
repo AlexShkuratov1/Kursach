@@ -1,0 +1,10 @@
+﻿@model HomeViewModel
+<h1>Поиск</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Camera camera in Model.favCameras)
+        {
+            @Html.Partial("AllCameras", camera)
+        }
+    }
+</div>
